@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-
+import Movietitles from './Movietitles.js'
 
 export default function Searchmovies(){
     const [query, setQuery] = useState('');
@@ -20,7 +20,7 @@ export default function Searchmovies(){
 }
     return(
         <>
-            <div>
+           
                 <form className="Form" onSubmit={Searchmovies}>
                     <label className="label"
                     htmlFor="query"> Find a movie
@@ -30,23 +30,11 @@ export default function Searchmovies(){
                 </form>
                 <div className="movies-list"></div>
                {movies.filter (movie => movie.poster_path).map(movie => (
-                    <div className = "movies" key={movie.id}>
-                    <img className="card--image" src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
-                    alt = {movie.title + ' poster'}
-                     />
-                     <div className= "movies--content">
-                         <h3 className= "movies--title">{movie.title}</h3>
-                         <p><small>Release Date: {movie.release_date}</small></p>
-                         <p><small>Rating: {movie.vote_average}</small></p>
-                         <p className = "movies--desc">{movie.overview}
-
-                         </p>
-                         
-                         </div>
-                     </div>
+                   
+                        <Movietitles movie={movie} key={movie.id} />
+          
                 ))}
-
-            </div>
+           
         </>
     )
 }

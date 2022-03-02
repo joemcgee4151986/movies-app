@@ -4,10 +4,13 @@ import './Searchmovies.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Searchmovies from './Searchmovies'
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
+    
     <Searchmovies />
+    
   </React.StrictMode>,
   document.getElementById('root')
 );
