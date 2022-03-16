@@ -26,9 +26,13 @@
       font-size:1.2rem;
       cursor: pointer;
       transition: background-color 300ms;
-      max-width: 100%;
+      
 
   }
+
+  @media all and (max-width:480px) {
+    .button-submit { width: 100%; display:block; }
+ }   
   .button-submit:hover{
       background-color:rgba(45, 85, 255, 1 );
   }
