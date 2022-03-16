@@ -26,6 +26,7 @@
       font-size:1.2rem;
       cursor: pointer;
       transition: background-color 300ms;
+      max-width: 100%;
 
   }
   .button-submit:hover{
