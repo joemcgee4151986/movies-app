@@ -13,6 +13,7 @@
       text-transform: uppercase;
       font-size:2rem;
       margin-bottom:.3rem;
+      max-width: 100%;
       
   }
   .input{
@@ -22,6 +23,7 @@
       border: 1px solid blue;
       margin-bottom:.3rem;
       border-radius:10px;
+      max-width: 100%;
       
   }
   .button-submit{
@@ -48,8 +50,20 @@
             grid-template-columns: auto 1fr auto;
             grid-gap:1rem;
             align-items: center;
+           
         }
   }
+  @media (max-width:768px){
+    .input{
+        width: 100%;
+    }
+}
+@media (max-width:768px){
+    .label{
+        text-align: center;
+        width: 100%;
+    }
+}
 
   .movies{
       padding: 3rem 4rem;
