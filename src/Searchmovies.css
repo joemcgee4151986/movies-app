@@ -50,11 +50,17 @@
   }
   .movies-list{
       margin-bottom: 3rem;
+      
   }
   .movies--title{
       font-size: 4rem;
+      transition:"0.8s linear";
   }
   .card--image{
       margin: 0 auto;
       display:block;
+  }
+  .FadeIn{
+        opacity:1;
+        transition: width 1s, height 1s, opacity 1s 1s;
   }
