@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import Movietitles from './Movietitles.js'
+import Fade from 'react-reveal/Fade';
 
 export default function Searchmovies(){
     const [query, setQuery] = useState('');
@@ -20,21 +20,41 @@ export default function Searchmovies(){
 }
     return(
         <>
-           
+            <div>
                 <form className="Form" onSubmit={Searchmovies}>
                     <label className="label"
                     htmlFor="query"> Find a movie
                     </label>
                     <input className="input" type="text" name="query" placeholder="Search" value = {query} onChange={(e) =>setQuery(e.target.value)}></input>
-                    <button className = "button-submit" type = "submit">Submit</button>
+                   { /*<button className = "button-submit" type = "submit">Submit</button>*/}
                 </form>
                 <div className="movies-list"></div>
+                
                {movies.filter (movie => movie.poster_path).map(movie => (
+                    <div className = "movies" key={movie.id}>
+                        <Fade Top>
+                    <img className="card--image" src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
+                    alt = {movie.title + ' poster'}
+                     />
+                    
+                     
+                     <div className= "movies--content">
+                         
+                         <h3 className= "movies--title">{movie.title}</h3>
+                         <p><small>Release Date: {movie.release_date}</small></p>
+                         <p><small>Rating: {movie.vote_average}</small></p>
+                         <p className = "movies--desc">{movie.overview}
+                        
+                         </p>
+                        
+                         </div>
+                         </Fade>
+                     </div>
                    
-                        <Movietitles movie={movie} key={movie.id} />
-          
                 ))}
-           
+
+            </div>
+            
         </>
     )
 }
